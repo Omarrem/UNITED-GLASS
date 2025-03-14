@@ -134,7 +134,7 @@ header{
         padding: 15px;
         margin: 15px;
         transition: 0.35s ease;
-        h4{
+         h4{
             color:rgb(138, 62, 0) ;
             font-size: 1.8em;
             font-weight: 800;
@@ -142,7 +142,7 @@ header{
             display: flex;
             justify-content: center;
             margin-bottom: 20px;
-        }
+         }
         .card:hover{
             transform: scale(1.1);   
         }
