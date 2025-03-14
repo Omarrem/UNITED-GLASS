@@ -13,47 +13,66 @@ header{
     background-color: rgb(0, 10, 100);
     width: 100%;
     position: fixed;
-    z-index: 999;
+    z-index: 998;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5625em 6.25em ;
+    padding: 1.2625em 6.25em ;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    .logo{
+        text-decoration: none;
+        color: rgb(138, 62, 0);
+        text-transform: uppercase;
+        font-weight: 300;
+        font-size: 2.5em;
+    }
+    .menu a{
+        position: relative;
+        text-decoration: none;
+        color: rgb(163, 87, 0);
+        font-weight: 600;
+        font-size: 1.2em;
+        margin: 35px;
+        transition: all .35s ease;
+    
+        &::before {
+            content: ""; 
+            position: absolute;
+            width: 95%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: rgb(179, 65, 0);
+            visibility: hidden;
+            -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+            -webkit-transition: all 0.3s ease-in-out 0s; 
+            transition: all 0.3s ease-in-out 0s; 
+        }   
+    
+        &:hover {
+            color: rgb(179, 65, 0);
+    
+            &::before {
+                visibility: visible;
+                -webkit-transform: scaleX(1);
+                transform: scaleX(1);
+            }   
+        }   
+    }
 }
 
-.logo{
-    text-decoration: none;
-    color: rgb(138, 62, 0);
-    text-transform: uppercase;
-    font-weight: 900;
-    font-size: 2em;
-}
-.navigation a{
-    text-decoration: none;
-    color: rgb(163, 87, 0);
-    font-weight: 600;
-    font-size: 1.2em;
-    padding-left: 35px;
-    margin: 15px;
-}
-.navigation a:hover{
-    color: rgba(252, 134, 0, 0.842);
-}
-
-section {
-    padding: 100px 120px ;
-}
 .main{
-    width: 100%;
-    min-height: 105vh;
-    display: flex;
-    align-items: center;
-    background: url(backgrounds/mainback.jpg) no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
-
-.main h2{
+        width: 100%;
+        min-height: 105vh;
+        display: flex;
+        align-items: center;
+        background: url(backgrounds/mainback.jpg) no-repeat;
+        background-size: cover;
+        background-position: center;
+        padding: 100px 120px ;
+    h2{
     color: rgb(138, 62, 0);
     font-weight: 800;
     font-size: 3em;
@@ -61,7 +80,7 @@ section {
     margin-top: 15px ;
     letter-spacing: 1.5px;
 }
-.main h3{
+    h3{
     color:rgb(138, 62, 0) ;
     font-size: 1.6em;
     font-weight: 700;
@@ -85,53 +104,233 @@ section {
     background-color: rgb(0, 7, 75);
     transform: scale(1.1);   
 }
+}
+
+.cards{
+    background: url(backgrounds/simple.jpg) no-repeat;
+    background-size: cover;
+    padding: 80px 120px ;
+    .title{
+        display: flex;
+        justify-content: center;
+        color: rgb(138, 62, 0);
+        font-size: 2.4em;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+        margin-bottom: 50px;
+        padding-top: 0px;
+    }
+    .content{
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .card{
+        background-color: rgb(255, 255, 255);
+        width: 25em;
+        box-shadow: 0 5px 25px rgba(1, 1, 1, 15%);
+        border-radius: 10px;
+        padding: 15px;
+        margin: 15px;
+        transition: 0.35s ease;
+        .h4{
+            color:rgb(138, 62, 0) ;
+            font-size: 1.8em;
+            font-weight: 800;
+            letter-spacing: 1px;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .card:hover{
+            transform: scale(1.1);   
+        }
+        .cardpic {
+            border-radius: 10px;
+            width: 100%;
+        }
+        .cardpic:hover{
+            opacity: 0.95;
+        }
+    }
+
+}
+
+.products {
+    background: url(backgrounds/black.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 80px 10px ;
+    .title{
+        display: flex;
+        justify-content: center;
+        color: rgb(138, 62, 0);
+        font-size: 2.4em;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+        margin-bottom: 50px;
+        padding-top: 0px;
+    }
+    .content{
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 60px;
+    }
+    .product-card{
+        background-color: rgb(87, 85, 85);
+        border: 1px solid rgb(255, 255, 255);
+        min-height: 10em;
+        width: 15em;
+        overflow: hidden;
+        border-radius: 10px;
+        margin: 15px;
+        transition: 0.7s ease;
+    }
+    .product-card:hover{
+    transform: scale(1.05);
+    }
+    .product-card:hover .product-image{
+        opacity: 0.95;
+    }
+    .product-image img{
+        width: 100%;
+        display: flex;
+        align-items: center;
+     }
+     .product-info{
+        padding: 0.8em;
+    }
+    .product-category{
+        font-size: 0.8em;
+        color: rgb(255, 255, 255);
+    }
+    .product-title{
+        display: flex;
+        justify-content: space-between;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-top: 10px;
+    }
+}
+
+.partners{
+    background: url(backgrounds/simple.jpg)no-repeat;
+    background-size: cover;
+    padding-bottom: 60px;
+    .title{
+        display: flex;
+        justify-content: center;
+        color: rgb(138, 62, 0);
+        font-size: 2.4em;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+        margin-bottom: 50px;
+        padding-top: 50px;
+    }
+    .content{
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .card{
+        background-color: rgb(255, 255, 255);
+        width: 18em;
+        box-shadow: 0 5px 25px rgba(1, 1, 1, 15%);
+        border-radius: 10px;
+        padding: 15px;
+        margin: 15px;
+        transition: 0.35s ease;
+    }
+    .card:hover{
+        transform: scale(1.1);   
+    }
+    .card h4{
+        color:rgb(138, 62, 0) ;
+        font-size: 1.8em;
+        font-weight: 800;
+        letter-spacing: 1px;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .card img{
+        width: 100%;
+        display: flex;
+        align-items: center;
+     }
+}
+
+.footer-container{
+    background-color: black;
+    padding: 4em 0 0 2em;
+    .footer{
+        width: 100%;
+        color: white;
+        display: flex;
+        justify-content:center;
+        margin: 0 ;
+        flex-wrap: wrap;
+    }
+    .footer-head {
+        display: flex;
+        flex-direction: column;
+        margin-right: 5em;
+        font-size: 1em;
+        padding-right: 50px;
+    }
+}
+
+
+
+
+
+
+.footer-head
+
+
+
+
+
+
+
+
+    .logo1{
+    text-decoration: none;
+    color: rgb(138, 62, 0);
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 2.5em;
+}
+.logo2{
+    text-decoration: underline 5px;
+    color: rgb(138, 62, 0);
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 1.6em;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.logo3{
+    text-decoration: none;
+    color: rgb(138, 62, 0);
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 2.5em;
+    padding-top: 10px;
+    text-align: center;
+    margin-top: -10px;
+}
+
 .social-icons a {
 color: aliceblue;
 font-size: 1.7em;
 padding-right: 35px;
 }
 
-.cards{
-    background: url(backgrounds/simple.jpg) no-repeat;
-    background-size: cover;
-}
-.title{
-    display: flex;
-    justify-content: center;
-    color: rgb(138, 62, 0);
-    font-size: 2.5em;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-    margin-bottom: 50px;
-}
-
-.content{
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-.card h4{
-    color:rgb(138, 62, 0) ;
-    font-size: 1.8em;
-    font-weight: 800;
-    letter-spacing: 1px;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-.card{
-    background-color: rgb(255, 255, 255);
-    width: 18em;
-    box-shadow: 0 5px 25px rgba(1, 1, 1, 15%);
-    border-radius: 10px;
-    padding: 15px;
-    margin: 15px;
-    transition: 0.35s ease;
-}
-.card:hover{
-    transform: scale(1.1);   
-}
 .icon a{
     color: rgb(138, 62, 0);
     text-align: center;
@@ -144,60 +343,8 @@ padding-right: 35px;
 .card a{
     text-decoration: none;
 }
-
-.cardpic {
-    max-width: 260px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(1,1,1,20%);
-   
-    width: 100%;
-}
-.cardpic:hover{
-    opacity: 0.9;
-}
-.products .title {
-    margin-bottom: 30px;
-}
-.products {
-    background: url(backgrounds/main2.avif) no-repeat;
-    background-size: cover;
-}
-
-.product .content{
-   margin-top: 30px;
-}
-.product-card{
-    background-color: rgb(255, 255, 255);
-    border: 1px solid white;
-    min-height: 14em;
-    width: 23em;
-    overflow: hidden;
-    border-radius: 10px;
-    margin: 15px;
-    transition: 0.7s ease;
-}
-.product-card:hover{
-    transform: scale(1.1);
-}
-.product-image img{
-   width: 100%;
-}
-.product-card:hover .product-image{
-    opacity: 0.95;
-}
-.product-info{
-    padding: 1em;
-}
-.product-category{
-    font-size: 0.8em;
-    color: black;
-}
-.product-title{
-    display: flex;
-    justify-content: space-between;
-    text-transform: uppercase;
-    font-weight: 800;
-    margin-top: 10px;
+.card-h a{
+    text-decoration: none;
 }
 .more-details{
     text-decoration: none;
@@ -206,39 +353,142 @@ padding-right: 35px;
 .more-details:hover{
     color: rgba(252, 134, 0, 0.842) ;
 }
-.footer{
-    background-color: rgb(0, 10, 100);
+
+.footer-1  {
+    display: flex;
+    flex-direction: column;
+    margin-right: 0.15em;
+    font-size: 1em;
+    margin-left: -50PX;
+}
+.footer-1 h2{
+    margin-bottom: 25px;
+    margin-top: 70px;
+    font-size: 1.8em;
+}
+.footer-1 h3{
+    margin-bottom: 10px;
+    font-size: 1.8em;
+}
+.footer-1 h4{
+    margin-bottom: 10px;
+    font-size: 1.8em;
+}
+.footer-1 h5{
+    margin-bottom: 10px;
+    font-size: 1.8em;
+}
+.footer-dots1 {
+    display: flex;
+    flex-direction: column;
+    font-size: 1em;
+    margin-top: 82px;
+}
+.footer-dots2 {
+    display: flex;
+    flex-direction: column;
+    font-size: 1em;
+    margin-top: 82px;
+}
+.footer-head {
+    margin-bottom: 0.7em;
+    margin-left: 10px;
+}
+.footer-head3 {
+    margin-bottom: 0.7em;
+    margin-left: 10px;
+}
+.footer-head h2 .logo2{
+    margin-bottom: 0.7em;
+    margin-left: -50px;
+}
+.footer-head h3{
+    margin-bottom: 0.9em;
+    margin-left: 12px;
+}
+.footer-head h4{
+    margin-bottom: 1.15em;
+    margin-left: 12px;
+    font-size: 1.2em;
+}
+.footer-head h5{
+    margin-bottom: 1.5em;
+    margin-left: 12px;
+    font-size: 1.15em;
+}
+.footer-head h1{
+    margin-bottom: 0.8em;
+    margin-left: 12px;
+    font-size: 1.15em;
+}
+.footer-dots1 h1{
+    margin-bottom: 0.95em;
+    margin-left: 12px;
+    font-size: 0.8em;
+}
+.footer-dots2 h1{
+    margin-bottom: 0.95em;
+    margin-left: 12px;
+    font-size: 0.8em;
+}
+
+.footer-head a{
     color: white;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+}
+.footer-head a:hover{
+    color: rgb(0, 17, 170);
+    transition: 0.35s ease-out;
+}
+.footer-head h3 .fa-solid {
+    font-size: 2em;
+    padding-right: 8px;
+}
+.footer-head h6{
+    font-size: 1em;
+    padding-right: 100px;
+    margin-bottom: 5px;
+    font-weight: 300;
+}
+.foter {
+    background-color: #000016;
+    color: #fff;
     padding: 2em;
     display: flex;
     justify-content: space-between;
 }
 
-
-.footer-title{
+.foter-title {
     font-size: 1.3em;
     font-weight: 600;
 }
 
-.footer-title span{
-    color: rgb(138, 62, 0);
+.foter-title span {
+    color: #3a6cf4;
 }
+
+.foter .social-icons a{
+    font-size: 1.3em;
+    padding: 0 12px 0 0;
+}
+
 
 @media (max-width:1023px){
     header{
-        padding: 12px 20px;
+        padding: 15px 5px 15px 20px;
+        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px;
+        align-items: normal;
      }
      .logo{
         font-size: 1.2em;
      }
      .navigation a{
-        font-size: 0.7em;
+        font-size: 0.6em;
         padding-left: 0px;
         margin-left: 0px;
-        font-weight: 700;
-     }
-     section{
-        padding: 50px 30px;
+        font-weight: 750;
      }
      .main h2{
         font-size: 1.4em;
@@ -254,9 +504,13 @@ padding-right: 35px;
         margin-top: 0px;
      }
      .main{
-     background-size: contain;
+       background: url(backgrounds/mainback\ 1.webp);
+        background-size: cover;
      background-position-y: 50px;
+     background-position: center;
      min-height: 0vh;
+     background-repeat: no-repeat;
+     padding: 250px 30px;
      }
      .main_btn{
         font-size: 0.5em;
@@ -265,6 +519,7 @@ padding-right: 35px;
      .cards{
         background-size: contain ;
         background-repeat: repeat;
+        padding: 50px 10px;
      }
      .title{
         font-size: 1.4em;
@@ -274,22 +529,25 @@ padding-right: 35px;
         width: 9em;
      border-radius: 10px;
      padding: 10px;
-     margin: 10px 0px 20px 10px;
+     margin: 5px 0px 0px 5px;
      padding-bottom: 5px;
      }
      .card h4{
         margin-bottom: 5px;
         font-size: 1.1em;
      }
+     .products{
+        padding: 30px 10px;
+     }
      .product-content{
         margin-top: 10px;
      }
      .product-card{
-        width: 9em;
+        width: 8em;
         margin: 10px;
      }
      .product-category{
-        font-size: 0.7em;
+        font-size: 0.6em;
         font-weight: 800;
      }
      .product-title{
@@ -297,7 +555,11 @@ padding-right: 35px;
         justify-content: space-between;
         text-transform: uppercase;
         font-weight: 800;
-        font-size: 0.45em;
+        font-size: 0.35em;
         margin-top: 1px;
+    }
+    .social-icons a{
+        padding: 0.5em;
+        font-size: 1em;
     }
 }
